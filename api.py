@@ -4,6 +4,7 @@ from flask import Flask, Response, jsonify, render_template, request
 import gevent
 from gevent.wsgi import WSGIServer
 from gevent.queue import Queue
+import sys
 
 app = Flask(__name__)
 subscriptions = []
@@ -31,8 +32,14 @@ class ServerSentEvent(object):
     def encode(self):
         if not self.data:
             return ""
-        lines = ["%s: %s" % (v, k) 
-                 for k, v in self.desc_map.iteritems() if k]
+            
+        py_version = sys.version_info[0]
+        if py_version == 2:
+            lines = ["%s: %s" % (v, k) 
+                     for k, v in self.desc_map.iteritems() if k]
+        else:
+            lines = ["%s: %s" % (v, k) 
+                     for k, v in self.desc_map.items() if k]
         
         return "%s\n\n" % "\n".join(lines)
 
