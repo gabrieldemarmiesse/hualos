@@ -4,7 +4,7 @@ For now, this is a simple demo where a Flask server exposes an API to publish an
 
 Example:
 
-- start the server: `python api.py`
+- start the server: `python api.py 9000`
 - load the landing page: `http://localhost:9000/`
 - launch a Keras experiment with the `RemoteMonitor` callback:
 
