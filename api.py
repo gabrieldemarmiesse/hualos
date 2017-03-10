@@ -78,5 +78,5 @@ if __name__ == "__main__":
     
     port = sys.argv[1]
     app.debug = True
-    server = WSGIServer(("", int(port), app)
+    server = WSGIServer(("", int(port)), app)
     server.serve_forever()
