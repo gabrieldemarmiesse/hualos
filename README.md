@@ -4,8 +4,8 @@ For now, this is a simple demo where a Flask server exposes an API to publish an
 
 Example:
 
-- start the server: `python api.py 9000`
-- load the landing page: `http://localhost:9000/`
+- start the server: `hualos-serve`
+- open the landing page: `http://localhost:9000/`
 - launch a Keras experiment with the `RemoteMonitor` callback:
 
 ```python
@@ -17,6 +17,12 @@ model.fit(X_train, Y_train, batch_size=batch_size, nb_epoch=nb_epoch, validation
 
 - the available metrics of the experiment will start being graphed in real time on the landing page.
 
+
+## Installation
+
+* `git clone https://github.com/gabrieldemarmiesse/hualos`
+* `pip install hualos`
+
 ## Dependencies:
 
 - Python:
@@ -26,3 +32,7 @@ model.fit(X_train, Y_train, batch_size=batch_size, nb_epoch=nb_epoch, validation
 - JS (included in the repo):
     - d3.js
     - c3.js
+
+## Help
+
+* `hualos-server --help`
