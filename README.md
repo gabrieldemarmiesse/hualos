@@ -35,4 +35,4 @@ model.fit(X_train, Y_train, batch_size=batch_size, nb_epoch=nb_epoch, validation
 
 ## Help
 
-* `hualos-server --help`
+* `hualos-serve --help`
