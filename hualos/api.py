@@ -93,7 +93,7 @@ def setup_args():
 def main():
     args = setup_args()
     app.debug = True
-    server = WSGIServer(("", args.port), app)
+    server = WSGIServer(("", int(args.port)), app)
     server.serve_forever()
 
 
